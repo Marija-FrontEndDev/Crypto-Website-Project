@@ -1,0 +1,81 @@
+
+
+.welcome-page {
+    display: flex;
+    padding: 1%;
+    margin: 1%;
+}
+
+
+.left-side {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+    h1 {
+        margin-bottom: 30px;
+        font-size: 3rem;
+        color: hsl(241, 79%, 62%);
+    }
+
+   button {
+        width: 160px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: hsl(241, 79%, 62%);
+        color: white;
+        font-size: 1rem;
+        border: none;
+
+    }
+}
+
+.right-side {
+    width: 60%;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    p {
+        position: absolute;
+        bottom: 30px;
+        right: 15px;
+        color: white;
+        font-size: 1.2rem;
+        font-style: italic;
+        font-weight: 800;
+        padding: 1%;
+
+    }
+    .writer {
+        bottom: 10px;
+        font-size: 1rem;
+        font-weight: 300;
+    }
+}
+
+.crypto-table {
+   max-width: 800px;
+   margin: auto;
+   background:hsl(241, 79%, 62%);
+   border-radius: 15px;
+}
+
+.table-layout {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+    padding: 15px 20px;
+    align-items: center;
+
+    .market-cap {
+        text-align: right;
+    }
+
+
+}
