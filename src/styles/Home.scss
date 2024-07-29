@@ -1,5 +1,4 @@
 
-
 .welcome-page {
     display: flex;
     padding: 1%;
@@ -60,16 +59,40 @@
     }
 }
 
+.top10 {
+    padding: 12px 20px;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    background:hsl(241, 47%, 82%);
+    color: hsl(241, 79%, 62%);
+    font-weight: bold;
+    
+
+    button {
+        border-radius: 10px;
+        background-color: hsl(241, 79%, 62%);;
+        color: white;
+        width: 120px;
+        height: 30px;
+    }
+}
+
 .crypto-table {
    max-width: 800px;
    margin: auto;
    background:hsl(241, 79%, 62%);
    border-radius: 15px;
+   color: white;
 }
 
 .table-layout {
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+    grid-template-columns: 0.3fr 1.5fr 0.7fr 1fr 1fr 1.5fr;
     padding: 15px 20px;
     align-items: center;
 
@@ -77,5 +100,25 @@
         text-align: right;
     }
 
+}
 
+
+.table-layout div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        width: 35px;
+    }
+}
+
+.green {
+    color: rgb(4, 97, 4);
+    text-align: center;
+}
+
+.red {
+    color: red;
+    text-align: center;
 }
