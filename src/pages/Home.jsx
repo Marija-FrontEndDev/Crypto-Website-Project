@@ -1,5 +1,6 @@
 import React from "react";
 import "@styles/Home.scss";
+import Loader from "@components/Loader.jsx";
 import welcomeimage from "@assets/home-Image.jpg"
 import { Link } from "react-router-dom";
 
@@ -29,7 +30,9 @@ const Home = () => {
 
       <div className="top10">
         <p>Top 10 Cryptos in the world: </p>
-        <button>Show more</button>
+        <button>
+         < Link to ="/cryptocurrencies">Show more</Link>
+        </button>
       </div>
 
 <div className="crypto-table">
@@ -41,13 +44,13 @@ const Home = () => {
     <p style={{textAlign:"center"}}>24h Change</p>
     <p className="market-cap">Market Cap</p>
   </div>
- 
 
  <div className="table-body">
  { error && <div> An error occured. Please refresh the page. </div>}
- { isPending && <div>Loading</div>}
+ { isPending && <Loader />}
   {data && data.slice(0, 10).map((coin) => (
-  <div className="table-layout" key={coin.id}>
+    <Link to ={`/coin/${coin.id}`} key={coin.id} style={{ textDecoration: 'none' }}>
+<div className="table-layout" key={coin.id}>
   <p>{coin.market_cap_rank}</p>
   <div>
   <img src={coin.image}/>
@@ -60,10 +63,19 @@ const Home = () => {
   </p>
   <p className="market-cap">${coin.market_cap.toLocaleString()}</p>
   </div>
+    </Link>
+  
   ))}
    </div>
    </div>
 
+  
+<div className="cryptonews">
+        <p>Latest Crypto News: </p>
+        <button>
+         < Link to ="/News">Show more</Link>
+        </button>
+      </div>
   </div>
    )
 }
