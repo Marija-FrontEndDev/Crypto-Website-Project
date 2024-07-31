@@ -7,7 +7,7 @@ export const fetchAllCoins = async () => {
   return data;
 };
 
-const singleCoinApiEndpoint= "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd/";
+const singleCoinApiEndpoint= "https://api.coingecko.com/api/v3/coins/";
 
 export const fetchSingleCoin = async (id) => {
   const { data } = await axios.get(`${singleCoinApiEndpoint}${id}`);
