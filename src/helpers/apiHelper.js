@@ -14,3 +14,11 @@ export const fetchSingleCoin = async (id) => {
   return data;
 };
 
+const historicalChartDataApiEndPoint= "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=10&interval=daily";
+
+export const fetchHistoricalChartData = async (coinId) => {
+  const { data } = await axios.get(`${historicalChartDataApiEndPoint}&ids${coinId}`);
+  return data;
+};
+
+
