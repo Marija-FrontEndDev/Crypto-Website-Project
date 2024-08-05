@@ -1,7 +1,8 @@
 import React from "react";
 import "@styles/Home.scss";
 import Loader from "@components/Loader.jsx";
-import welcomeimage from "@assets/home-Image.jpg"
+import welcomeimage from "@assets/welcome-image.png"
+
 import { Link } from "react-router-dom";
 
 import { useQuery } from '@tanstack/react-query'
@@ -16,16 +17,21 @@ const Home = () => {
 
   return (
   <div>
-    <div className="welcome-page">
-      <div className="left-side"> 
-      <h1>Welcome to the <br/> CryptoWorld!</h1>
-      <button> <Link to="/get-started">Get Started</Link> </button>
-      </div>
-      <div className="right-side">
+      <div className="welcome-page">
       <img src= {welcomeimage} alt="Welcomeimage" />
+      <div className="welcome-text"> 
+      <h1>Welcome to the CryptoWorld!</h1>
+      <p>Explore the world of cryptocurrency and how you can start buying, selling, and trading it.</p>
+    <div className="buttons">
+    <button> <Link to="/get-started">Get Started</Link> </button>
+    <button> <Link to="/learn-more">Learn More</Link> </button>
+    {/* <div className="quote">
       <p>"The biggest risk person can take is to do nothing"</p>
       <p className="writer"> -Robert Kiyosaki</p>
+      </div> */}
+    </div>
       </div>
+  
       </div>
 
       <div className="top10">
