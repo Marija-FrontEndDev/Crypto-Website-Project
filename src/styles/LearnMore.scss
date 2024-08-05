@@ -1,0 +1,27 @@
+.learnmore-main {
+    display: flex;
+    align-items: stretch;
+    gap: 2%;
+    padding: 1%;
+    margin: 1%;
+}
+
+.left-side {
+    background-color: rgb(231, 231, 238);
+    color: rgb(25, 25, 114);
+    text-align: justify;
+    padding: 2%;
+
+    p {
+        line-height: 2;
+    }
+}
+
+.right-side {
+    width: 50%;
+
+}
+
+a {
+    text-decoration: none;
+}
