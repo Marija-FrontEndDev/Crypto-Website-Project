@@ -1,5 +1,5 @@
 .main-conatiner {
-    width: 400px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +18,7 @@
 }
 
 .createAccount {
-    width: 100%;
+  width: 100%;
   padding: 10px;
   margin-top: 10px;
   border: none;
@@ -36,5 +36,22 @@
   a {
     color: inherit;
     text-decoration: none;
+  }
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+
+  .checkboxInput {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  label {
+    margin: 0;
+    line-height: 1.5;
+    vertical-align: middle
   }
 }
