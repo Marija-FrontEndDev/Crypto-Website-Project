@@ -8,7 +8,14 @@ import { Link } from "react-router-dom";
 import { useQuery } from '@tanstack/react-query'
 import { fetchAllCoins } from '@helpers/apiHelper.js'
 
+// global state
+import { darkModeConfig } from "@helpers/zustandDarkMode.js";
+
+
+
 const Home = () => {
+
+  const { darkMode, setDarkMode } = darkModeConfig();
 
   const {data, error, isPending}= useQuery ({
     queryKey: ["allCoins"],
@@ -17,7 +24,8 @@ const Home = () => {
 
   return (
   <div>
-      <div className="welcome-page">
+    <div className={darkMode ? "Home dark" : "Home"}>
+    <div className="welcome-page">
       <img src= {welcomeimage} alt="Welcomeimage" />
       <div className="welcome-text"> 
       <h1>Welcome to the CryptoWorld!</h1>
@@ -74,14 +82,7 @@ const Home = () => {
   ))}
    </div>
    </div>
-
-  
-<div className="cryptonews">
-        <p>Latest Crypto News: </p>
-        <button>
-         < Link to ="/News">Show more</Link>
-        </button>
-      </div>
+    </div>
   </div>
    )
 }
