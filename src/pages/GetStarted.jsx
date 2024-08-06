@@ -15,14 +15,30 @@ const GetStarted = () => {
     fullName: '',
     email: '',
     phoneNumber: '',
+    ageCheck: '',
+    citizenshipCheck: '',
+    termsCheck: '',
+  });
+
+  const [checkboxes, setCheckboxes] = useState({
+    ageCheck: false,
+    citizenshipCheck: false,
+    termsCheck: false,
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setSignUpForm({
-      ...signUpForm,
-      [name]: value,
-    });
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      setCheckboxes({
+        ...checkboxes,
+        [name]: checked,
+      });
+    } else {
+      setSignUpForm({
+        ...signUpForm,
+        [name]: value,
+      });
+    }
   };
 
   const validateEmail = (email) => {
@@ -37,6 +53,9 @@ const GetStarted = () => {
       fullName: '',
       email: '',
       phoneNumber: '',
+      ageCheck: '',
+      citizenshipCheck: '',
+      termsCheck: '',
     };
 
     let isValid = true;
@@ -59,6 +78,22 @@ const GetStarted = () => {
       isValid = false;
     }
 
+    if (!checkboxes.ageCheck) {
+      newErrors.ageCheck = 'You must confirm that you are over 18.';
+      isValid = false;
+    }
+
+    if (!checkboxes.citizenshipCheck) {
+      newErrors.citizenshipCheck = 'You must confirm your citizenship status.';
+      isValid = false;
+    }
+
+    if (!checkboxes.termsCheck) {
+      newErrors.termsCheck = 'You must agree to the Terms & Conditions and Privacy Policy.';
+      isValid = false;
+    }
+
+
     setErrors(newErrors);
 
   }
@@ -71,6 +106,7 @@ const GetStarted = () => {
         <div>
         <label htmlFor='fullName'>Full Name: </label>
           <input
+          className='inputField'
           placeholder='Enter your name'
           type="text"
             id="fullName"
@@ -84,6 +120,7 @@ const GetStarted = () => {
         <div>
           <label htmlFor="email" >Email: </label>
           <input
+          className='inputField'
           placeholder='Type your email'
             type="email"
             id="email"
@@ -97,6 +134,7 @@ const GetStarted = () => {
           <div>
           <label htmlFor='phoneNumber'>Phone Number: </label>
           <input
+          className='inputField'
             placeholder='Enter your phone number'
             type="text"
             id="phoneNumber"
@@ -105,6 +143,45 @@ const GetStarted = () => {
             onChange={handleChange}
           />
           {errors.phoneNumber && <p className='error-message'>{errors.phoneNumber}</p>}
+        </div>
+        <div className="checkbox-container">
+          <input
+          className='checkboxInput'
+            type="checkbox"
+            name="ageCheck"
+            checked={checkboxes.ageCheck}
+            onChange={handleChange}
+          />
+          <label>
+            I am over 18
+          </label>
+          {errors.ageCheck && <p className='error-message'>{errors.ageCheck}</p>}
+        </div>
+        <div className="checkbox-container">
+          <input
+          className='checkboxInput'
+            type="checkbox"
+            name="citizenshipCheck"
+            checked={checkboxes.citizenshipCheck}
+            onChange={handleChange}
+          />
+          <label>
+            I am not a U.S. citizen, nor have any tax obligations in the U.S.
+          </label>
+          {errors.citizenshipCheck && <p className='error-message'>{errors.citizenshipCheck}</p>}
+        </div>
+        <div className="checkbox-container">
+          <input
+          className='checkboxInput'
+            type="checkbox"
+            name="termsCheck"
+            checked={checkboxes.termsCheck}
+            onChange={handleChange}
+          />
+          <label>
+            By creating an account, I agree with Terms & Conditions and Privacy Policy.
+          </label>
+          {errors.termsCheck && <p className='error-message'>{errors.termsCheck}</p>}
         </div>
           <button type='submit' className='createAccount'>Create Account</button>
           </form>
