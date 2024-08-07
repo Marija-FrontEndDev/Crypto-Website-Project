@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
+import { darkModeConfig } from "@helpers/zustandDarkMode.js";
+
 import "@styles/LearnMore.scss";
 
 import firstpicture from "@assets/first-picture.jpg"
@@ -9,10 +11,13 @@ import thirdpicture from "@assets/third-picture.jpg"
 import fourthpicture from "@assets/fourth-picture.webp"
 
 const LearnMore = () => {
+
+  const { darkMode, setDarkMode } = darkModeConfig();
+
   return (
-    <div>
+    <div className={darkMode ? "Learn dark" : "Learn"}>
       <div className='learnmore-main ' >
-        <p className='left-side'> <h4>What is cryptocurrency?</h4> <br/>
+<p className='left-side' > <h4>What is cryptocurrency?</h4> <br/>
         Cryptocurrency is a digital currency that can be used to buy goods and services or traded for a profit. <br/>
         Cryptocurrency investing can take many forms, from buying cryptocurrency directly to investing in crypto funds and companies. <br/>
 You can buy cryptocurrency using a crypto exchange or through certain broker-dealers. Once you own it, you can store, manage, and even buy or sell your crypto in a wallet. <br/>
@@ -45,9 +50,7 @@ You can buy cryptocurrency using a crypto exchange or through certain broker-dea
         Explore decentralized finance, or DeFi: A wide variety of new players are aiming to recreate the entire global financial system, from mutual-fund-like investments to loan-lending mechanisms and way beyond, without any central authorities.</p>
         <img className='right-side'   src= {fourthpicture} alt="fourthpicture" />
       </div>
-
       <p>If you’re interested in learning more about cryptocurrency, press on <button> <Link to="/get-started">Get Started</Link> </button></p>
-
     </div>
   )
 }
