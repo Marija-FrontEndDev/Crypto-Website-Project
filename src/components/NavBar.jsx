@@ -26,6 +26,10 @@ const NavBar = () => {
     sethamburgerMenu(!hamburgerMenu);
   };
 
+  const closeMenu = () => {
+    setHamburgerMenu(false);
+  };
+
   return (
     <nav className={darkMode ? "navbar dark" : "navbar"}>
 <div className='navbar'>
@@ -39,25 +43,25 @@ const NavBar = () => {
         <ul className={`nav-links ${hamburgerMenu ? 'open' : ''}`}>
           <div className='left-side-nav'>
           <li>
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={closeMenu}>Home</Link>
         </li>
         <li>
-          <Link to="/cryptocurrencies">Cryptocurrencies</Link>
+          <Link to="/cryptocurrencies" onClick={closeMenu}>Cryptocurrencies</Link>
         </li>
         <li>
-          <Link to="/learn-more">Learn More</Link>
+          <Link to="/learn-more" onClick={closeMenu}>Learn More</Link>
         </li>
           </div>
         <div className='right-side-nav'>
         <li>
-            <Link to="/login" className="login">Log In</Link>
+            <Link to="/login" onClick={closeMenu} >Log In</Link>
           </li>
           <li>
-            <Link to="/get-started" className="start">Get Started</Link>
+            <Link to="/get-started" className="start" onClick={closeMenu}>Get Started</Link>
           </li>
-          <li><button onClick={() => setDarkMode()}>
+          <button onClick={() => setDarkMode()}>
             <img src={DarkThemeIcon} alt="DarkThemeIcon" className="DarkThemeIcon"/>
-          </button></li>
+          </button>
         </div>
       </ul>
     </div>
