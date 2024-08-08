@@ -1,8 +1,9 @@
 .navbar {
+    width: 100%;
+    justify-content: space-between;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 10px;
+    padding: 0.5% ;
     color: hsl(241, 79%, 62%);
     // border-bottom: 2px solid #5f68ee;
    position: relative;
@@ -11,17 +12,20 @@
 
 .logo {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    width: 20%;
 
 img {
-    width: 15%;
-    height: 15%;
+    width: 22%;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 2%;
 }
-}
 
+h3 {
+  font-size: 1.6rem;
+}
+}
     .navbar.dark {
         background-color: rgb(7, 7, 49);
       
@@ -37,54 +41,45 @@ img {
 }
 
     .nav-links {
+      width: 70%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 10px;
-        width:100%;
         list-style: none;
-        padding: 0;
-        margin: 0;
-        // transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
         
-        // &.open {
-        //   transform: translateX(0);
+        &.open {
+          transform: translateX(0);
     }
+  }
         
         li {
                     cursor: pointer;
+                    padding: 8px;
+                    border-radius: 7px;
                     
                 &:hover {
-                    background-color: hsl(241, 79%, 62%);;
+                    background-color: hsl(241, 79%, 62%);
                     color: white;
-                    border-radius: 10px;
-                    padding: 7px;
-                    margin: 7px;
-                    
+                
                 }
             }
 
     .start {
                 padding: 7px;
-            margin: 7px;
-                width: 110px;
-                height: 30px;
-                border-radius: 20px;
+                width: 120px;
+                border-radius: 10px;
                 background-color: hsl(241, 79%, 62%);;
                 color: white;
-        
+
             }
     
-    .left-side-nav {
+    .left-side-nav, .right-side-nav {
         display: flex;
-        gap: 15px;
+        align-items: center;
+        gap: 20px ;
     }
 
-    .right-side-nav {
-        display: flex;
-        gap: 15px;
-       
-    }
 
     .hamburger {
         display: none;
@@ -94,32 +89,76 @@ img {
         background: none;
     }
 
-      @media (max-width: 768px) {
+    .DarkThemeIcon {
+      height: 20px;
+    }
+
+    @media only screen and (max-width: 900px) {
+      .nav-links li {
+  padding: 4px;
+}
+
+.start {
+  padding: 4px;
+}
+
+    .logo h3 {
+      font-size: 1.3rem;
+    }
+
+    .left-side-nav, .right-side-nav {
+      gap: 8px;
+    }
+
+    }
+    @media only screen and (max-width: 820px) {
+
+      .logo h3 {
+        font-size: 1.1rem;
+      }
+      
+      .nav-links {
+        width: 75%;
+      }
+      .left-side-nav, .right-side-nav {
+        gap: 1px;
+      }
+    }
+
+   
+
+    @media only screen and  (max-width: 720px) {
+
+       .logo h3 {
+          font-size: 1rem;
+        }
         .nav-links{
         display: none;
-          width: 100%;
           position: absolute;
-          top: 60px;
-          left: 0;
+          top: 35px;
+          right: 0;
           background-color: white;
           list-style: none;
-          padding: 0;
-          margin: 0;
+          width: 30%;
+          z-index: 1000;
+          
+        li {
+          padding: 10px;
+        }
+
         }
       
         .nav-links.open {
           display: flex;
           flex-direction: column;
 
-          .left-side {
+          .left-side-nav, .right-side-nav {
             display: flex;
             flex-direction: column;
-          }
-
-          .right-side {
-            display: flex;
-            flex-direction: column;
-          }
+            align-items: flex-end;
+            width: 100%;
+            gap: 5px;
+        }
         }
       
         .hamburger {
@@ -127,21 +166,31 @@ img {
         
         }
         
-        .nav-links li {
-          padding: 15px;
-        }
-      
-        .nav-links a {
-          text-decoration: none;
-          color: black;
-        }
-      
+  }
+
+  @media only screen and  (max-width: 600px) {
+    .logo h3 {
+      font-size: 0.9rem;
+    }
+
+    .nav-links {
+      width: 40%;
+      top: 30px;
+    }
+  }
+
+  @media only screen and  (max-width: 440px) {
+    .logo h3 {
+      font-size: 0.8rem;
+    }
+
+    .nav-links {
+      width: 50%;
+    }
   }
 
 
-  .DarkThemeIcon {
-    height: 25px;
-  }
+  
 
 
 
