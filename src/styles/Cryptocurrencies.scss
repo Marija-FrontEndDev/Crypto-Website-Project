@@ -1,12 +1,11 @@
-input {
-    width: 400px;
+.searchcrypto input {
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 12px 20px;
+    padding: 10px ;
     margin: auto;
-    margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 20px;
     background:hsl(241, 47%, 82%);
@@ -14,3 +13,147 @@ input {
     font-weight: bold;
    
     }
+
+    .crypto-table {
+      max-width: 800px;
+      margin: auto;
+      background:hsl(241, 79%, 62%);
+      border-radius: 15px;
+      color: white;
+   }
+   
+   .table-layout {
+       display: grid;
+       grid-template-columns: 0.3fr 1.5fr 0.7fr 1fr 1fr 1.5fr;
+       padding: 15px 20px;
+       align-items: center;
+   
+       .market-cap {
+           text-align: right;
+       }
+   
+   }
+   
+   
+   .table-layout div {
+       display: flex;
+       align-items: center;
+       gap: 20px;
+   
+       img {
+           width: 35px;
+       }
+   }
+   
+   .green {
+       color: rgb(4, 97, 4);
+       text-align: center;
+   }
+   
+   .red {
+       color: red;
+       text-align: center;
+   }
+
+    .Crypto {
+        color: white;
+        
+      }
+      
+      .Crypto.dark {
+        background-color: rgb(7, 7, 49);
+      }
+
+      .Crypto.table {
+        color: hsl(241, 79%, 62%);
+        background-color: rgb(7, 7, 49);
+      }
+
+
+      @media only screen and (max-width: 700px) {
+        .searchcrypto input {
+          width: 50%;
+          padding: 9px;
+          margin-bottom: 15px;
+          font-size: 0.8rem;
+        }
+
+      .crypto-table {
+        font-size: 0.9rem;
+      }
+
+      .table-layout {
+        padding: 10px;
+         div {
+        gap: 10px;
+        img {
+        width: 30px;
+      }
+    }
+  }
+      }
+
+      @media only screen and (max-width: 580px) {
+        .searchcrypto input {
+          width: 60%;
+          padding: 6px;
+          margin-bottom: 10px;
+          font-size: 0.6rem;
+        }
+
+      .crypto-table {
+        font-size: 0.7rem;
+      }
+
+      .table-layout {
+        padding: 8px;
+      div {
+        gap: 7px;
+      img {
+        width: 25px;
+      }
+    }
+    } 
+      }
+
+      @media only screen and (max-width: 480px) {
+        .searchcrypto input {
+          width: 70%;
+          padding: 5px;
+        }
+
+      .crypto-table {
+        font-size: 0.6rem;
+      }
+
+      .table-layout {
+        padding: 6px;
+      div {
+        gap: 5px;
+      img {
+        width: 20px;
+      }
+      }
+    }
+    }
+
+    @media only screen and (max-width: 380px) {
+      .searchcrypto input {
+        width: 80%;
+        padding: 4px;
+      }
+
+    .crypto-table {
+      font-size: 0.5rem;
+    }
+
+    .table-layout {
+      padding: 5px;
+    div {
+      gap: 2px;
+    img {
+      width: 15px;
+    }
+    }
+  }
+  }
