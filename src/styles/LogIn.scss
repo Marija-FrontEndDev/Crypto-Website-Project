@@ -1,15 +1,15 @@
 .card-container {
-  width: 400px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 30px auto 20px auto;
+  margin: 0 auto 0 auto;
   background: white;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: rgb(146, 167, 233);
+  background-color: hsl(241, 79%, 62%);
 }
 
 .log-in-container {
@@ -18,8 +18,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  padding: 20px;
+  gap: 10px;
 }
 
 .welcome {
@@ -28,29 +27,25 @@
 }
 
 form {
-  display: flex;
-  flex-direction: column;
   width: 100%;
-  background: white;
-  padding: 15px;
-  margin: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  padding: 10px;
+  margin: 10px;
 }
 
 label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #555;
+  color:white;
 }
 
-input {
+.inputField {
   width: 95%;
   padding: 10px;
   margin: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #ddd; 
+  background-color: hsl(241, 79%, 62%);
+  color: rgb(7, 7, 49);
   border-radius: 10px;
   font-size: 14px;
 }
@@ -60,15 +55,15 @@ input {
   padding: 10px;
   margin-top: 10px;
   border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: #fff;
+  border-radius: 6px;
+  background-color: rgb(7, 7, 49);
+  color: white;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: rgb(3, 3, 75);
   }
 
   a {
@@ -83,8 +78,8 @@ p {
   button {
     background: none;
     border: none;
-    color: #007bff;
-    font-size: 16px;
+    color: rgb(7, 7, 49);
+    font-size: 15px;
     cursor: pointer;
 
     &:hover {
@@ -93,7 +88,61 @@ p {
   }
 }
 
-.error-message {
+.error-message  {
   color: red;
   text-align: start;
 }
+
+.Login {
+  color: white;
+}
+
+.Login.dark {
+  background-color: rgb(7, 7, 49);
+
+  .welcome {
+    color: rgb(7, 7, 49);
+  }
+
+  .logpar {
+    color: rgb(7, 7, 49);
+    font-weight: 500;
+  }
+
+  p {
+    button {
+      color: white;
+    }
+  }
+
+  label {
+    color: rgb(7, 7, 49);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .card-container {
+    max-width: 320px;
+
+    .welcome {
+      font-size: 1.6rem;
+    }
+
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .card-container {
+    max-width: 300px;
+
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .card-container {
+    max-width: 280px;
+
+  }
+}
+
+
