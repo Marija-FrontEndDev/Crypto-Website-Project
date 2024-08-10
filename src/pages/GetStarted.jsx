@@ -2,8 +2,11 @@ import React from 'react'
 import "@styles/GetStarted.scss";
 import { useState } from 'react';
 import { Link } from "react-router-dom";
+import { darkModeConfig } from "@helpers/zustandDarkMode.js";
 
 const GetStarted = () => {
+
+  const { darkMode, setDarkMode } = darkModeConfig();
 
   const [signUpForm, setSignUpForm] = useState({
     fullName: '',
@@ -16,13 +19,11 @@ const GetStarted = () => {
     email: '',
     phoneNumber: '',
     ageCheck: '',
-    citizenshipCheck: '',
     termsCheck: '',
   });
 
   const [checkboxes, setCheckboxes] = useState({
     ageCheck: false,
-    citizenshipCheck: false,
     termsCheck: false,
   });
 
@@ -54,7 +55,6 @@ const GetStarted = () => {
       email: '',
       phoneNumber: '',
       ageCheck: '',
-      citizenshipCheck: '',
       termsCheck: '',
     };
 
@@ -83,25 +83,20 @@ const GetStarted = () => {
       isValid = false;
     }
 
-    if (!checkboxes.citizenshipCheck) {
-      newErrors.citizenshipCheck = 'You must confirm your citizenship status.';
-      isValid = false;
-    }
-
     if (!checkboxes.termsCheck) {
       newErrors.termsCheck = 'You must agree to the Terms & Conditions and Privacy Policy.';
       isValid = false;
     }
-
 
     setErrors(newErrors);
 
   }
 
   return (
+    <div className={darkMode ? "GetStarted dark" : "GetStarted"}>
     <div className='main-conatiner'>
-      <h1>Create New Account</h1>
-      <p>Please provide your details</p>
+      <h1 className='CreateAcc'>Create New Account</h1>
+      <p className='logpar'>Please provide your details</p>
       <form onSubmit={handleSignUp} noValidate>
         <div>
         <label htmlFor='fullName'>Full Name: </label>
@@ -161,19 +156,6 @@ const GetStarted = () => {
           <input
           className='checkboxInput'
             type="checkbox"
-            name="citizenshipCheck"
-            checked={checkboxes.citizenshipCheck}
-            onChange={handleChange}
-          />
-          <label>
-            I am not a U.S. citizen, nor have any tax obligations in the U.S.
-          </label>
-          {errors.citizenshipCheck && <p className='error-message'>{errors.citizenshipCheck}</p>}
-        </div>
-        <div className="checkbox-container">
-          <input
-          className='checkboxInput'
-            type="checkbox"
             name="termsCheck"
             checked={checkboxes.termsCheck}
             onChange={handleChange}
@@ -185,11 +167,13 @@ const GetStarted = () => {
         </div>
           <button type='submit' className='createAccount'>Create Account</button>
           </form>
-        <p> 
+        <p className='logpar'> 
           Already have an account? {' '}
           <button><Link to="/login">Log In</Link></button>
         </p>
     </div>
+      </div>
+
   )
 }
 
