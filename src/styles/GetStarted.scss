@@ -1,20 +1,25 @@
-.main-conatiner {
+.main-container {
   width: 400px;
+  display: flex;
+  margin: 0 auto 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: hsl(241, 79%, 62%);
+}
+
+.GetStarted-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 30px auto 20px auto;
-  background: white;
-  padding: 20px;
-  gap: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: rgb(146, 167, 233);
-
-  h1 {
-    color: white;
+  gap: 15px;
 }
+
+.CreateAcc {
+  color: white;
 }
 
 .createAccount {
@@ -22,15 +27,15 @@
   padding: 10px;
   margin-top: 10px;
   border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: #fff;
+  border-radius: 6px;
+  background-color: rgb(7, 7, 49);
+  color: white;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: rgb(3, 3, 75);
   }
 
   a {
@@ -42,7 +47,8 @@
 .checkbox-container {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 
   .checkboxInput {
     margin-right: 10px;
@@ -53,5 +59,62 @@
     margin: 0;
     line-height: 1.5;
     vertical-align: middle
+  }
+}
+
+.GetStarted {
+  color: white;
+}
+
+.GetStarted.dark {
+  background-color: rgb(7, 7, 49);
+
+  .CreateAcc {
+    color: rgb(7, 7, 49);
+}
+.logpar {
+  color: rgb(7, 7, 49);
+  font-weight: 500;
+}
+
+p {
+  button {
+    color: white;
+  }
+}
+
+  label {
+    color: rgb(7, 7, 49);
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .main-container {
+    max-width: 350px;
+
+    .CreateAcc {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .main-container {
+    max-width: 320px;
+
+    .CreateAcc {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .main-container {
+    max-width: 280px;
+
+    .CreateAcc {
+      font-size: 1.4rem;
+    }
   }
 }
