@@ -1,0 +1,135 @@
+.coin-container {
+    max-width: 650px;
+    margin: auto ;
+    display: flex;
+    padding: 30px;
+    border-radius: 10px;
+    background-color:  hsl(241, 79%, 62%);
+}
+
+.coin-details-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+
+    .coinImage {
+        width: 160px;
+    }
+
+    .coin-chart {
+        width: 100%;
+    }
+
+    .coin-info  {
+        width: 100%;
+           p {
+            display: flex;
+            justify-content: space-between;
+            // margin: 10px 20px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgb(250, 231, 231);
+          }
+          span {
+            font-weight: bold;
+          }
+}
+}
+
+.CoinDetails {
+    color: white;
+  }
+  
+  .CoinDetails.dark {
+    background-color: rgb(7, 7, 49);
+
+    .coin-details-card {
+        background-color:  hsl(241, 79%, 62%);
+
+        .cointitle {
+            color: rgb(7, 7, 49);
+        }
+
+        .coin-info {
+            color: rgb(7, 7, 49);
+            p {
+                border-bottom: 1px solid rgb(7, 7, 49);
+            }
+        }
+
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .coin-container {
+        max-width: 550px;
+    }
+
+    .coin-details-card {
+        .coinImage {
+            width: 130px;
+        }
+    }
+   
+}
+
+@media only screen and (max-width: 650px) {
+    .coin-container {
+        max-width: 400px;
+        padding: 20px;
+    }
+
+    .coin-details-card {
+        gap: 20px;
+
+        .coinImage {
+            width: 110px;
+        }
+        .cointitle {
+            font-size: 1.3rem;
+        }
+        .coin-info {
+            font-size: 0.8rem;
+        }
+    }
+   
+}
+
+@media only screen and (max-width: 500px) {
+    .coin-container {
+        max-width: 320px;
+    }
+
+    .coin-details-card {
+        gap: 12px;
+
+        .coinImage {
+            width: 80px;
+        }
+        .cointitle {
+            font-size: 1.1rem;
+        }
+
+    }
+   
+}
+
+@media only screen and (max-width: 400px) {
+    .coin-container {
+        max-width: 280px;
+    }
+
+    .coin-details-card {
+
+        .coinImage {
+            width: 70px;
+        }
+        .cointitle {
+            font-size: 1rem;
+        }
+
+    }
+   
+}
