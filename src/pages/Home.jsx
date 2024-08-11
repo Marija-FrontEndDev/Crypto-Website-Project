@@ -11,8 +11,6 @@ import { fetchAllCoins } from '@helpers/apiHelper.js'
 // global state
 import { darkModeConfig } from "@helpers/zustandDarkMode.js";
 
-
-
 const Home = () => {
 
   const { darkMode, setDarkMode } = darkModeConfig();
@@ -23,7 +21,7 @@ const Home = () => {
   })
 
   return (
-  <div>
+    <div>
     <div className={darkMode ? "Home dark" : "Home"}>
     <div className="welcome-page">
       <img src= {welcomeimage} alt="Welcomeimage" />
@@ -33,13 +31,8 @@ const Home = () => {
     <div className="buttons">
     <button> <Link to="/get-started">Get Started</Link> </button>
     <button> <Link to="/learn-more">Learn More</Link> </button>
-    {/* <div className="quote">
-      <p>"The biggest risk person can take is to do nothing"</p>
-      <p className="writer"> -Robert Kiyosaki</p>
-      </div> */}
     </div>
       </div>
-  
       </div>
 
       <div className="top10">
@@ -49,39 +42,28 @@ const Home = () => {
         </button>
       </div>
 
-<div className="crypto-table">
-  <div className="table-layout">
-    <p>#</p>
-    <p>Coins</p>
-    <p>Symbol</p>
-    <p>Price</p>
-    <p style={{textAlign:"center"}}>24h Change</p>
-    <p className="market-cap">Market Cap</p>
-  </div>
-
- <div className="table-body">
+ <div className="container-topten">
  { error && <div> An error occured. Please refresh the page. </div>}
  { isPending && <Loader />}
   {data && data.slice(0, 10).map((coin) => (
     <Link to ={`/coin/${coin.id}`} key={coin.id} style={{ textDecoration: 'none' }}>
-<div className="table-layout" key={coin.id}>
-  <p>{coin.market_cap_rank}</p>
-  <div>
-  <img src={coin.image}/>
-  <p>{coin.name}</p>
+<div className="home-coins" key={coin.id}>
+  <div className="card-top">
+  <p>{coin.market_cap_rank}. {coin.name} ({coin.symbol.toUpperCase()})</p>
+  <img src={coin.image} className="smallcoinimage"/>
   </div>
-  <p>{coin.symbol.toUpperCase()}</p>
-  <p>${coin.current_price.toFixed(2)}</p>
-  <p className={coin.price_change_percentage_24h> 0 ? "green" : "red"}>
-  {Math.floor(coin.price_change_percentage_24h*100)/100}
-  </p>
-  <p className="market-cap">${coin.market_cap.toLocaleString()}</p>
+  <div className="basic-coin-info">
+  <p>Price: ${coin.current_price.toFixed(2)}</p>
+  <span className={coin.price_change_percentage_24h> 0 ? "green" : "red"}>
+    Daily Change: {Math.floor(coin.price_change_percentage_24h*100)/100}
+  </span>
+  </div>
   </div>
     </Link>
-  
+
   ))}
    </div>
-   </div>
+
     </div>
   </div>
    )
