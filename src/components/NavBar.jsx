@@ -3,8 +3,9 @@ import React from 'react'
 import "@styles/NavBar.scss"
 
 import logo from "@assets/logo-pic.webp"
-import DarkThemeIcon from "@assets/dark-theme.jpg";
-import HamburgerIcon from "@assets/hamburgermenu.jpg";
+import DarkThemeIcon from "@assets/dark-new.svg";
+import HamburgerIcon from "@assets/hamburger-new.svg";
+import CloseHamburger from "@assets/close-new.svg";
 
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react';
@@ -31,14 +32,14 @@ const NavBar = () => {
   };
 
   return (
-    <nav className={darkMode ? "navbar dark" : "navbar"}>
-<div className='navbar'>
+    <nav className={darkMode ? "navbarContainer dark" : "navbarContainer"}>
+      <div className='navbar'>
         <div className='logo'>
         <img src={logo} alt="" /> 
           <Link to="/"><h3>CryptoWorld</h3></Link>
         </div>
         <button className='hamburger' onClick={toggleNav}>
-          <img src={HamburgerIcon} alt="HamburgerIcon" />
+          <img src={hamburgerMenu ? CloseHamburger : HamburgerIcon} alt="HamburgerIcon" />
         </button>
         <ul className={`nav-links ${hamburgerMenu ? 'open' : ''}`}>
           <div className='left-side-nav'>
@@ -59,8 +60,8 @@ const NavBar = () => {
           <li>
             <Link to="/get-started" className="start" onClick={closeMenu}>Get Started</Link>
           </li>
-          <button onClick={() => setDarkMode()}>
-            <img src={DarkThemeIcon} alt="DarkThemeIcon" className="DarkThemeIcon"/>
+          <button className="DarkThemeIcon" onClick={() => setDarkMode()} >
+            <img src={DarkThemeIcon} alt="DarkThemeIcon" className="DarkThemeIcon" />
           </button>
         </div>
       </ul>
