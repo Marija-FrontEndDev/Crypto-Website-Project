@@ -1,6 +1,6 @@
 .welcome-page {
   position: relative;
-  padding-bottom: 2%;
+  padding-bottom: 15px;
 
   img {
     width: 100%;
@@ -54,14 +54,14 @@
 }
 
 .top10 {
-  padding: 12px 15px;
+  padding: 10px 10px;
   margin: auto;
   margin-bottom: 20px;
   max-width: 800px;
   display: flex;
   justify-content: space-between;
   border: 1px solid  hsl(241, 79%, 62%);
-  border-radius: 5px;
+  border-radius: 10px;
   align-items: center;
   color: hsl(241, 79%, 62%);
   font-size: 1.2rem;
@@ -73,7 +73,13 @@
     color: white;
     width: 140px;
     height: 35px;
+    font-size: 16px;
     cursor: pointer;
+    border: none;
+
+    &:hover {
+      background-color: hsl(241, 53%, 50%);
+    }
   }
 }
 
@@ -82,6 +88,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  padding-bottom: 15px;
 
   .home-coins {
     background: rgb(116, 116, 211);
@@ -110,8 +117,69 @@
   }
 }
 
+.FAQ {
+  max-width: 800px;
+  color: hsl(241, 79%, 62%);
+  margin: auto;
+  padding: 15px;
+
+  h2 {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .FAQ-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; 
+
+  .FAQ-card {
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+    border: 1px solid  hsl(241, 79%, 62%);
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 10px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: hsl(241, 79%, 62%);
+    color: white;
+
+}
+  }
+  }
+}
+
+.startearning {
+  padding-top: 5px;
+  text-align: center;
+  color: hsl(241, 79%, 62%);
+
+  h2 {
+  padding-bottom: 10px;
+}
+
+  button {
+    width: 160px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: hsl(241, 79%, 62%);
+    color: white;
+    border: none;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: orange;
+      color: white;
+    }
+  }
+}
+
 .Home {
   color: white;
+  padding: 15px 0;
 }
 
 .Home.dark {
@@ -146,6 +214,13 @@
   .home-coins p {
     color: rgb(7, 7, 49);
     font-weight: 600;
+  }
+
+  .FAQ-card {
+    &:hover {
+      background-color: hsl(241, 79%, 62%);
+      color:rgb(7, 7, 49) ;
+  }
   }
 }
 
@@ -200,6 +275,27 @@
       height: 35px;
     }
   }
+
+  .FAQ h2 {
+    font-size: 1.3rem;
+  }
+
+  .FAQ-card {
+    font-size: 0.9rem;
+  }
+
+  .startearning  {
+    h2 {
+      font-size: 1.3rem; 
+    }
+      button {
+        width: 140px;
+       height: 30px;
+        font-size: 0.8rem;
+    }
+  }
+  
+
 }
 
 @media only screen and (max-width: 550px) {
@@ -225,6 +321,10 @@
       height: 30px;
       font-size: 0.7rem;
     }
+  }
+
+  .home-coins p {
+    font-size: 0.9rem;
   }
 }
 
