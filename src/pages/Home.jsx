@@ -2,8 +2,10 @@ import React from "react";
 import "@styles/Home.scss";
 import Loader from "@components/Loader.jsx";
 import welcomeimage from "@assets/welcome-image.png"
+import arrow from "@assets/arrow.svg"
 
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 import { useQuery } from '@tanstack/react-query'
 import { fetchAllCoins } from '@helpers/apiHelper.js'
@@ -21,7 +23,8 @@ const Home = () => {
   })
 
   return (
-    <div>
+    <div >
+      <div id="top"></div>
     <div className={darkMode ? "Home dark" : "Home"}>
     <div className="welcome-page">
       <img src= {welcomeimage} alt="Welcomeimage" />
@@ -63,6 +66,25 @@ const Home = () => {
 
   ))}
    </div>
+
+   <div className="FAQ">
+    <h2>Frequently Asked Questions</h2>
+    <div className="FAQ-container">
+  <HashLink to="/learn-more#what-is-cryptocurrency" className="FAQ-card"><span>What is cryptocurrency?</span>
+  <img src={arrow} alt="arrow" /></HashLink>
+  <HashLink to="/learn-more#how-does-it-work" className="FAQ-card"><span>How does cryptocurrency work?</span>
+  <img src={arrow} alt="arrow" /></HashLink>
+  <HashLink to="/learn-more#future-of-finance" className="FAQ-card"> <span>Why is cryptocurrency the future of finance?</span>
+  <img src={arrow} alt="arrow" /></HashLink>
+  <HashLink to="/learn-more#uses-of-crypto" className="FAQ-card"><span>What can you do with cryptocurrency?</span>
+  <img src={arrow} alt="arrow" /></HashLink>
+</div>
+    </div>
+
+    <div className="startearning">
+      <h2>Start earning today</h2>
+      <button> <HashLink to="/get-started#top">Sign Up Now</HashLink> </button>
+    </div>
 
     </div>
   </div>
