@@ -23,6 +23,21 @@
     text-align: center;
   }
 
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .welcome-text {
+    animation: slideDown 2s ease-out;
+  }
+
   h1 {
     margin-bottom: 2%;
     font-size: 3rem;
@@ -60,7 +75,7 @@
   max-width: 800px;
   display: flex;
   justify-content: space-between;
-  border: 1px solid  hsl(241, 79%, 62%);
+  border: 1px solid hsl(241, 79%, 62%);
   border-radius: 10px;
   align-items: center;
   color: hsl(241, 79%, 62%);
@@ -95,7 +110,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 200px;
+    width: 180px;
     padding: 12px;
     box-sizing: border-box;
 
@@ -117,6 +132,22 @@
   }
 }
 
+@keyframes slideDownCoins {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.home-coins {
+  opacity: 0;
+  animation: slideDownCoins 1s ease-out forwards;
+}
+
 .FAQ {
   max-width: 800px;
   color: hsl(241, 79%, 62%);
@@ -129,26 +160,25 @@
   }
 
   .FAQ-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px; 
-
-  .FAQ-card {
     display: flex;
-  justify-content: space-between;
-  align-items: center;
-    border: 1px solid  hsl(241, 79%, 62%);
-    font-weight: 500;
-    border-radius: 8px;
-    padding: 10px;
-  text-decoration: none;
+    flex-direction: column;
+    gap: 16px;
 
-  &:hover {
-    background-color: hsl(241, 79%, 62%);
-    color: white;
+    .FAQ-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid hsl(241, 79%, 62%);
+      font-weight: 500;
+      border-radius: 8px;
+      padding: 10px;
+      text-decoration: none;
 
-}
-  }
+      &:hover {
+        background-color: hsl(241, 79%, 62%);
+        color: white;
+      }
+    }
   }
 }
 
@@ -158,8 +188,8 @@
   color: hsl(241, 79%, 62%);
 
   h2 {
-  padding-bottom: 10px;
-}
+    padding-bottom: 10px;
+  }
 
   button {
     width: 160px;
@@ -207,7 +237,7 @@
   }
 
   .top10 button {
-    color:rgb(7, 7, 49) ;
+    color: rgb(7, 7, 49);
     font-weight: 600;
   }
 
@@ -219,8 +249,8 @@
   .FAQ-card {
     &:hover {
       background-color: hsl(241, 79%, 62%);
-      color:rgb(7, 7, 49) ;
-  }
+      color: rgb(7, 7, 49);
+    }
   }
 }
 
@@ -284,18 +314,16 @@
     font-size: 0.9rem;
   }
 
-  .startearning  {
+  .startearning {
     h2 {
-      font-size: 1.3rem; 
+      font-size: 1.3rem;
     }
-      button {
-        width: 140px;
-       height: 30px;
-        font-size: 0.8rem;
+    button {
+      width: 140px;
+      height: 30px;
+      font-size: 0.8rem;
     }
   }
-  
-
 }
 
 @media only screen and (max-width: 550px) {
@@ -328,7 +356,7 @@
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 400px) {
   .welcome-text {
     h1 {
       font-size: 1.3rem;
