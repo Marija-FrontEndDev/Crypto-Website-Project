@@ -25,7 +25,7 @@ const CoinDetail = () => {
 
   return (
     <div className={darkMode ? "CoinDetails dark" : "CoinDetails"}>
-<div className='coin-container'>
+<div className='coin-container' >
   { error && <div> An error occured. Please refresh the page. </div>}
       { isPending && <Loader />}
       {data &&  (

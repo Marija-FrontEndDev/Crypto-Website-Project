@@ -41,6 +41,7 @@ const LogIn = () => {
 
   return (
     <div className={darkMode ? "Login dark" : "Login"}>
+      <div id="top"></div>
 <div className='card-container'>
 <div className='log-in-container'>
       <h1 className='welcome'>Welcome Back!</h1>

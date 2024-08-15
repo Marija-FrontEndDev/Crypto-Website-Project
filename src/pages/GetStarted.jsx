@@ -94,7 +94,9 @@ const GetStarted = () => {
 
   return (
     <div className={darkMode ? "GetStarted dark" : "GetStarted"}>
-    <div className='main-conatiner'>
+      <div id="top"></div>
+    <div className='main-container'>
+      <div className='GetStarted-container'>
       <h1 className='CreateAcc'>Create New Account</h1>
       <p className='logpar'>Please provide your details</p>
       <form onSubmit={handleSignUp} noValidate>
@@ -171,9 +173,9 @@ const GetStarted = () => {
           Already have an account? {' '}
           <button><Link to="/login">Log In</Link></button>
         </p>
+      </div>
     </div>
       </div>
-
   )
 }
 

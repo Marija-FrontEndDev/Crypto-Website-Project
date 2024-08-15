@@ -5,7 +5,6 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchAllCoins } from "@helpers/apiHelper.js";
 import Loader from "@components/Loader.jsx";
 import { Link } from "react-router-dom";
-import search from "@assets/search.png"
 import { darkModeConfig } from "@helpers/zustandDarkMode.js";
 
 const Cryptocurrencies = () => {
@@ -27,6 +26,8 @@ const Cryptocurrencies = () => {
 
   return (
     <div className={darkMode ? "Crypto dark" : "Crypto"}>
+      <div id="top"></div>
+      <div className="crypto-container">
       <div className="searchcrypto" >
         <input
           type="text"
@@ -79,6 +80,8 @@ const Cryptocurrencies = () => {
 </div>
 </div>
 </div>
+      </div>
+      
       
     </div>
   );
