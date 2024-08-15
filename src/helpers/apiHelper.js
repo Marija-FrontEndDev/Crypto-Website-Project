@@ -19,4 +19,3 @@ export const fetchHistoricalChartData = async (coinId) => {
   return data;
 };
 
-
