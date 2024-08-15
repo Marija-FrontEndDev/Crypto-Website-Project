@@ -1,3 +1,7 @@
+.crypto-container {
+  padding: 20px 0;
+}
+
 .searchcrypto input {
     width: 40%;
     display: flex;
@@ -8,10 +12,8 @@
     margin: auto;
     margin-bottom: 20px;
     border-radius: 20px;
-    background:hsl(241, 47%, 82%);
+    border: 1px solid  hsl(241, 79%, 62%);
     color: hsl(241, 79%, 62%);
-    font-weight: bold;
-   
     }
 
     .crypto-table {
@@ -62,11 +64,15 @@
       
       .Crypto.dark {
         background-color: rgb(7, 7, 49);
+
+        .searchcrypto input {
+          background-color: rgb(7, 7, 49) ;
+        }
       }
 
       .Crypto.table {
-        color: hsl(241, 79%, 62%);
-        background-color: rgb(7, 7, 49);
+        color: rgb(7, 7, 49);
+        font-weight: 550;
       }
 
 

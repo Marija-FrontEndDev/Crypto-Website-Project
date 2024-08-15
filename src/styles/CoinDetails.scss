@@ -1,3 +1,7 @@
+.CoinDetails {
+    padding: 20px 0;
+}
+
 .coin-container {
     max-width: 650px;
     margin: auto ;
@@ -100,6 +104,7 @@
 @media only screen and (max-width: 500px) {
     .coin-container {
         max-width: 320px;
+        padding: 15px;
     }
 
     .coin-details-card {
@@ -119,6 +124,7 @@
 @media only screen and (max-width: 400px) {
     .coin-container {
         max-width: 280px;
+        padding: 10px;
     }
 
     .coin-details-card {

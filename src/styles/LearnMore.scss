@@ -1,9 +1,7 @@
 .learnmore-main {
     display: flex;
-    // align-items: stretch;
     gap: 2%;
     padding: 1%;
-    // margin: 1%;
 }
 
 .left-side {
@@ -11,6 +9,7 @@
     color: rgb(25, 25, 114);
     text-align: justify;
     padding: 2%;
+    padding-bottom: 15px;
 
     p {
         line-height: 2;
@@ -26,6 +25,17 @@ a {
     text-decoration: none;
 }
 
+.pressOn {
+    color:  rgb(25, 25, 114);
+    font-weight: 500;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.btninlearn {
+   color:  hsl(241, 79%, 62%);
+}
+
 .Learn {
     color: white;
   }
@@ -35,6 +45,13 @@ a {
   
     .left-side{
         background-color: rgb(7, 7, 49);
+        color: hsl(241, 79%, 62%);
+    }
+    .btninlearn {
+        color: white;
+    }
+
+    .pressOn {
         color: hsl(241, 79%, 62%);
     }
 
@@ -59,7 +76,7 @@ a {
 
 @media only screen and (max-width: 800px) {
 
-    p {
+    .pressOn {
         font-size: 0.8rem;
     }
 
@@ -85,7 +102,7 @@ a {
         height: 200px;
     }
 
-    p {
+    .pressOn {
         font-size: 0.7rem;
     }
 
@@ -102,7 +119,7 @@ a {
         height: 150px;
     }
 
-    p {
+    .pressOn {
         font-size: 0.6rem;
     }
 
