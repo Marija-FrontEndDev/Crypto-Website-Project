@@ -38,7 +38,7 @@ const CoinChart = () => {
             <div>
         <Chart
         width={'100%'}
-        height={'400px'}
+        height={'250px'}
         chartType="LineChart"
         loader={<Loader />}
         data={chartData}
